@@ -1,18 +1,10 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+// import Image from "next/image";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { useState } from "react";
 
 export default function Home() {
 
+<<<<<<< Updated upstream
   const FizzBuzz = (limit:number): void => {
   for (let i: number = 1; i <= limit; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
@@ -127,6 +119,25 @@ FizzBuzz(100);
           Go to nextjs.org →
         </a>
       </footer>
+=======
+  const [result, setResult] = useState(0);
+
+  const clickHandler = () => {
+
+    const laSuma = sumar(2, 3);
+    setResult(laSuma);
+  
+  }
+
+  const sumar = (a: number, b: number): number => {
+    return a + b;
+  }
+
+  return ( // Todo debe de estar dentro de una sola etiqueta
+    <div>
+      <h1>Resultado: {result}</h1>
+      <button onClick={clickHandler}>Calcular</button>
+>>>>>>> Stashed changes
     </div>
   );
 }
