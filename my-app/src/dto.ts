@@ -8,7 +8,7 @@ export interface Car {
 
 export interface User {
     name: string;
-    age: number;
+    password: string | number;
     email: string;
 }
 

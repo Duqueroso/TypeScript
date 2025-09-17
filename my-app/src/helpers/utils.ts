@@ -16,15 +16,15 @@ export const restar = (a: number, b: number): number => {
 export const Users: User[] = [
     {
         name: "Juan",
-        age: 30,
+        password: "12345",
         email: "juan@example.com"
     }, {
         name: "Maria",
-        age: 25,
+        password: "25",
         email: "maria@example.com"
     }, {
         name: "Pedro",
-        age: 35,
+        password: "35",
         email: "pedro@example.com"
     }
 ];
