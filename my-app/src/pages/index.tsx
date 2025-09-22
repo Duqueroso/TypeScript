@@ -1,5 +1,5 @@
-import { User } from "@/dto";
-import { Users } from "@/helpers/utils";
+// import { User } from "@/dto";
+import { Authenticate } from "@/helpers/utils";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -23,23 +23,27 @@ const Login = () => {
 
         if (username.length === 0 || Userpassword.length === 0) {
             alert("Por favor ingresa tus credenciales");
-            return;
         }
 
-        const userFound = Users.find((user) => user.email === username && user.password === Userpassword);
-        console.log(userFound);
-
-        if (!userFound) {
-            alert("Usuario o contraseña incorrecta");
-            return;
-        }
+        const userFound = Authenticate(username, Userpassword);
 
         if (userFound) {
+            // Redirigir al usuario al dashboard
             router.push("/dashboard");
-            // console.log("Botón clickeado");
-            // router.push("/dashboard");
+        } else {
+            alert("Usuario o contraseña incorrectos");
+            setUserName("");
+            setPassword("");
         }
     };
+
+    
+    // newUserStore.create();
+    // newUserStore.update();
+    // newUserStore.delete();
+    // newUserStore.findByName("Juan");
+
+    
 
 
   return (
@@ -56,6 +60,8 @@ const Login = () => {
                 <input value={Userpassword} onChange={handlerChangePassword} type="password" id="password" name="password" required />
             </div>
             <button type="submit" onClick={handleClick}>Iniciar Sesión</button>
+
+            {/* <div> {newUserStore.create()} </div> */}
 
     </div>
   );

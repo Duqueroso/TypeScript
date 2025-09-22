@@ -1,14 +1,17 @@
 // import * as funciones from '@/helpers/utils';
 // import toUpperCaseLetter from '@/helpers/capitalizar';
 // import {Users} from '@/helpers/utils';
+import { userStore } from '@/services/users';
 import { useRouter } from 'next/router';
-import React, { use } from 'react'
+import React, { useState } from 'react'
 // import { Car } from '@/dto';
 // // import type { Product } from '@/helpers/utils';
 // import { PRODUCTS } from '@/helpers/utils';
 // import { capitalize, toLowerCaseSafe, truncate, formatPrice } from '@/helpers/utils';
 
 const Dashboard = () => {
+
+  const [userList, setUserList] = useState([]);
 
   const router = useRouter();
 
@@ -41,23 +44,28 @@ const Dashboard = () => {
     // console.log(nameCapitalized); 
 
     // console.log(Users);
+
+  const getUsers = () => {
+        const newUserStore = new userStore();
+        const oUsers = newUserStore.list();
+
+        oUsers.then((data) => {
+            setUserList(data.users);
+        });
+    }
     
 
   return (
     <div>
-      <h1>Login Page</h1>
-      <h2>Por favor ingresa tus credenciales</h2>
-        <form>
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div>
-            <label htmlFor="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required />
-          </div>
-          <button type="submit">Iniciar Sesión</button>
-        </form>
+      <h1>Dashboard</h1>
+
+      <button onClick={getUsers}> Obtener Usuarios </button>
+
+      <ul>
+        {userList.map((item: { name: string; age: number }, index: number) => (
+          <li key={index}>{item.name} - {item.age} años</li>
+        ))}
+      </ul>
 
         <br />
 

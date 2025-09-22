@@ -29,8 +29,6 @@ export const Users: User[] = [
     }
 ];
 
-
-
 export const PRODUCTS: Product[] = [
   {
     id: 'p-001',
@@ -73,3 +71,27 @@ export function formatPrice(amount: number, currency: 'COP' | 'USD'): string {
   }
   return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount / 100);
 }
+
+// Autenticación simple
+
+export function Authenticate(username: string, Userpassword: string): boolean {
+  const user = Users.find((user) => user.email === username && user.password === Userpassword);
+  return !!user;
+}
+
+
+
+// export function modifyCreateUser(
+//   target: User,
+//   propertyKey: string,
+//   descriptor: PropertyDescriptor
+// ) {
+//   const originalMethod = descriptor.value;
+
+//   descriptor.value = function (...args: User[]) {
+//     const user = originalMethod.apply(this, args);
+//     return { ...user, role: 'user', createdAt: new Date() };
+//   };
+  
+//   return descriptor;
+// }

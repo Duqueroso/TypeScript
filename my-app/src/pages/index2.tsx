@@ -1,7 +1,7 @@
 // import Image from "next/image";
 
-import { CircleCheckBig, CircleX } from "lucide-react";
-import { useState } from "react";
+// import { CircleCheckBig, CircleX } from "lucide-react";
+// import { useState } from "react";
 
 export default function Home() {
   // type Currency = "USD" | "COP";
@@ -291,20 +291,20 @@ export default function Home() {
   }
 
 
-  class Student extends Coder {
-    course: string;
-    university?: string;
+  // class Student extends Coder {
+  //   course: string;
+  //   university?: string;
 
-    constructor(name: string, age: number, languages: string[], course: string, university?: string) {
-      super(name, age, languages);
-      this.course = course;
-      this.university = university;
-    }
+  //   constructor(name: string, age: number, languages: string[], course: string, university?: string) {
+  //     super(name, age, languages);
+  //     this.course = course;
+  //     this.university = university;
+  //   }
 
-    estudiar() {
-      return `El estudiante ${this.name} está estudiando ${this.course}.`;
-    }
-  }
+  //   estudiar() {
+  //     return `El estudiante ${this.name} está estudiando ${this.course}.`;
+  //   }
+  // }
 
   class vehiculo {
     marca: string;
@@ -346,11 +346,10 @@ export default function Home() {
   
 
   const coder1 = new Coder("Juan", 30, ["JavaScript", "TypeScript", "Python"]);
-  const coder2 = new Coder("María", 25, ["Java", "C#", "Ruby"]);
+
 
   const vehiculo1 = new vehiculo("Toyota", "Corolla", 2020, "Rojo", "Sedán");
-  const vehiculo2 = new vehiculo("Honda", "Civic", 2019, "Azul");
-
+  
   const moto1 = new Moto("Yamaha", "YZF-R3", 2020, "Negro", "Deportiva");
 
   // Usar los métodos de las clases
