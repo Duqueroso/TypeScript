@@ -2,7 +2,7 @@ import { User } from "@/dto";
 import type { Product } from '@/dto';
 import { toast } from "react-toastify";
 import { Bounce } from "react-toastify/unstyled";
-import { Card } from '@/components/card'
+// import { Card } from '@/components/card'
 import { CardProps } from '../components/card';
 
 export const sumar = (a: number, b: number): number => {
