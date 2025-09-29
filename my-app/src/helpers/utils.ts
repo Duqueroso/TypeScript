@@ -1,5 +1,9 @@
 import { User } from "@/dto";
 import type { Product } from '@/dto';
+import { toast } from "react-toastify";
+import { Bounce } from "react-toastify/unstyled";
+import { Card } from '@/components/card'
+import { CardProps } from '../components/card';
 
 export const sumar = (a: number, b: number): number => {
   return a + b;
@@ -95,3 +99,75 @@ export function Authenticate(username: string, Userpassword: string): boolean {
   
 //   return descriptor;
 // }
+
+export const notification = (text:string, type: 'success' | 'error' | 'warning', time?: number) => {
+
+if (type === 'success') {
+  toast.success(text, {
+        position: "bottom-center",
+        autoClose: time || 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+}
+
+if (type === 'warning') {
+  toast.warn(text, {
+        position: "bottom-center",
+        autoClose: time || 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light"
+      });
+}
+
+if (type === 'error') {
+  toast.error(text, {
+        position: "bottom-center",
+        autoClose: time || 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+}
+};
+
+export const arrayCard:CardProps[] = [
+{
+  title: "Card 1",
+  description: "Description 1",
+  type: "black"
+},
+{
+  title: "Card 2",
+  description: "Description 2",
+  type: "white"
+},
+{
+  title: "Card 3",
+  description: "Description 3",
+  type: "green"
+},
+{
+  title: "Card 4",
+  description: "Description 4",
+  type: "black"
+},
+{
+  title: "Card 5",
+  description: "Description 5",
+  type: "white"
+}
+]

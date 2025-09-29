@@ -1,10 +1,17 @@
 /* @import "tailwindcss"; */
+@import './components/button.css';
+@import './components/badge.css';
+@import './components/card.css';
+/* @import "tailwindcss"; */
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+ :root {
+  --color-fondo: #F6F8EE;
+  --color-text: #000000;
+  --color-primary: #D6E68A;
+  --color-secondary: #899752;
+  --color-danger: #ac4747;
+ }
+/*
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -14,18 +21,39 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-fondo: #0a0a0a;
+    --color-text: #ededed;
   }
 } */
 
-/* body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: var(--color-fondo);
+}
 
-.list-item {
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--color-fondo);
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 400px;
+  margin: 2rem auto;
+}
+/* .list-item {
   margin-bottom: 0.5rem;
   padding: 0.5rem;
   border: 1px solid var(--foreground);
@@ -34,4 +62,5 @@
   background-color: #f9f9f9;
   height: 200px;
   width: 500px;
-}
+} */
+
